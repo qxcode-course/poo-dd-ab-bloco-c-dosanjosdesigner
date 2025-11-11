@@ -3,7 +3,7 @@ class Foo:
     def __init__(self, valor):
         self.valor = valor
         
-    def __repr__(self):
+    def __repr__(self): # preciso deste metodo pois preciso imprimir diretamente o objeto e se não tiver por padrão o pyton mostra o endereço de memória do objeto e não o conteúdo.
         return f"Foo(valor={self.valor})"
 
 
