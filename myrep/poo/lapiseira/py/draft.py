@@ -76,7 +76,16 @@ class Pencil:
         
         self.tip.set_size(self.tip.get_size() - usage)
 
-def __str__(self):
-    tip_str = str(self.tip) if self.tip else "null"
-    barrel_str = ", ".join(str(lead) for lead in self.barrel)
-    return f"Bico: {tip_str}\nTambor: [{barrel_str}]"
+    def __str__(self):
+        tip_str = str(self.tip) if self.tip else "null"
+        barrel_str = ", ".join(str(lead) for lead in self.barrel)
+        return f"Bico: {tip_str}\nTambor: [{barrel_str}]"
+
+
+lapiseira = Pencil(0.5)
+lapiseira.insert(Lead(0.5, "HB", 50))
+lapiseira.insert(Lead(0.5, "2B", 60))
+print(lapiseira)  
+lapiseira.pull()
+lapiseira.write_page()
+print(lapiseira)  

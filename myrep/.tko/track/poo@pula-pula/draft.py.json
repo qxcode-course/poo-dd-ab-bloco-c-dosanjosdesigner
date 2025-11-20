@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-19_23-28-23",
+            "content": "@@ -1552,190 +1552,4 @@\n %0A  %0A\n-parquinho = Trampoline()%0Aparquinho.arrive(Kid(%22Ana%22, 5))%0Aparquinho.arrive(Kid(%22Beto%22, 6))%0Aprint(parquinho)  %0A%0Aparquinho.enter()%0Aprint(parquinho)  %0A%0Aparquinho.leave()%0Aprint(parquinho)  %0A%0A\n",
+            "lines": "59"
+        },
+        {
+            "label": "2025-11-19_23-28-52",
+            "content": "class Kid:\n    def __init__(self, name: str, age: int):\n        self.name = name\n        self.page = age\n\n    def getName (self) -> str:\n        return self.name\n    \n    def getAge(self) -> int:\n        return self.age \n    def setName (self, name: str):\n        self.name = name\n    def setAge (self, age: int):\n        self.age = age\n    \n    def __str__(self):\n        return f\"{self.name}:{self.age}\"\n\nclass Trampoline:\n    def __init__(self):\n        self.playing: list[Kid] = []\n        self.waiting: list[Kid] = []\n\n    def arrive (self, kid: Kid):\n        self.waiting.append(kid)\n\n    def enter(self):\n        if not self.waiting :\n            print(\"fail: fila vazia\")\n            return\n        self.playing.append(self.waiting.pop(0))\n\n    def leave (self):\n        if not self.playing:\n            print(\"fail: ningu\u00e9m no pula-pula\")\n            return\n        self.waiting.append(self.playing.pop(0))\n\n\n    def removeFromList(self, name: str, lst: list[Kid]) -> Kid | None:\n        for i, kid in enumerate(lst):\n            if kid.getName() == name:\n                return lst.pop(i)\n        return None\n\n    \n    def removeKid(self, name: str) -> Kid | None:\n        kid = self.removeFromList(name, self.playing)\n        if kid:\n            return kid\n        return self.removeFromList(name, self.waiting)\n\n    def __str__(self):\n        playing_str = \", \".join(str(kid) for kid in self.playing)\n        waiting_str = \", \".join(str(kid) for kid in self.waiting)\n        return f\"Jogando: [{playing_str}]\\nEsperando: [{waiting_str}]\"\n\n\n  \nparquinho = Trampoline()\nparquinho.arrive(Kid(\"Ana\", 5))\nparquinho.arrive(Kid(\"Beto\", 6))\nprint(parquinho)  \n\nparquinho.enter()\nprint(parquinho)  \n\nparquinho.leave()\nprint(parquinho)  \n\n",
+            "lines": "70"
+        }
+    ]
+}
