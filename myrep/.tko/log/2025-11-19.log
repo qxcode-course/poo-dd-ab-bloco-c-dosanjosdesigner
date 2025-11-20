@@ -25,3 +25,6 @@
 2025-11-19 23:28:52, MOVE, v:1, k:poo@pula-pula, mode:PICK
 2025-11-19 23:28:52, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:70
 2025-11-19 23:28:59, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-19 23:45:10, MOVE, v:1, k:poo@tabuleiro, mode:PICK
+2025-11-19 23:45:13, EXEC, v:1, k:poo@tabuleiro, mode:FULL, rate:0, size:0
+2025-11-19 23:45:28, MOVE, v:1, k:poo@tabuleiro, mode:BACK
